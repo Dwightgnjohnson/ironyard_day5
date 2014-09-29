@@ -5,7 +5,7 @@
 # We have a week of records tracking what we shipped at Planet Express.
 # I need you to answer a few questions for Hermes.
 
-# How much money did we make this week?
+# How much money did we make this week? 
 
 # Also, bonuses are paid to employees who pilot the Planet Express
 # Different employees have favorite destinations they always pilot to
