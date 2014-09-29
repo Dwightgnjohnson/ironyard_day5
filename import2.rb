@@ -19,7 +19,14 @@ bender_shipments = 0
 leela_bonus = 0
 leela_shipments = 0
 
-money_from_each_planet = {}
+earth_money = 0
+mars_money = 0
+uranus_money = 0
+moon_money = 0
+jupiter_money = 0
+pluto_money = 0
+saturn_money = 0
+mercury_money = 0
 
 open("planet_express_logs.csv").each do |shipment_line|
 #Break down the data into indivdual line-arrays, cut off the \n with 'chomp', while at the same time splitting the line up at the ','
@@ -39,19 +46,44 @@ open("planet_express_logs.csv").each do |shipment_line|
   money += each_shipment.money
 
 # bonuses calculated:
+
+  def leela
+
+  end
+
   case each_shipment.destination
   when "Earth"
     fry_bonus     += each_shipment.money * 0.10
     fry_shipments += 1
+    earth_money += each_shipment.money
   when "Mars"
     amy_bonus     += each_shipment.money * 0.10
     amy_shipments += 1
+    mars_money += each_shipment.money
   when "Uranus"
     bender_bonus  += each_shipment.money * 0.10
     bender_shipments += 1
+    uranus_money += each_shipment.money
+  when "Moon"
+    leela_bonus   += each_shipment.money * 0.10
+    leela_shipments += 1
+    moon_money += each_shipment.money
+  when "Jupiter"
+    leela_bonus   += each_shipment.money * 0.10
+    leela_shipments += 1
+    jupiter_money += each_shipment.money
+  when "Pluto"
+    leela_bonus   += each_shipment.money * 0.10
+    leela_shipments += 1
+    pluto_money += each_shipment.money
+  when "Saturn"
+    leela_bonus   += each_shipment.money * 0.10
+    leela_shipments += 1
+    saturn_money += each_shipment.money
   else
     leela_bonus   += each_shipment.money * 0.10
     leela_shipments += 1
+    mercury_money += each_shipment.money
   end
 
 
@@ -83,28 +115,13 @@ puts "Mercury:  $#{shipments[9].money}"
 
 
 # How much money did we make broken down by planet?
-puts "\nMONEY BY PLANET - The Lazy way"
+puts "\nMONEY BY PLANET - The Lazy way... kindof"
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#end
+puts "Earth:    $#{earth_money}"
+puts "Moon:     $#{moon_money}"
+puts "Mars:     $#{mars_money}"
+puts "Uranus:   $#{uranus_money}"
+puts "Jupitor:  $#{jupiter_money}"
+puts "Pluto:    $#{pluto_money}"
+puts "Saturn:   $#{saturn_money}"
+puts "Mercury:  $#{mercury_money}"
