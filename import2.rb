@@ -19,6 +19,8 @@ bender_shipments = 0
 leela_bonus = 0
 leela_shipments = 0
 
+money_from_each_planet = {}
+
 open("planet_express_logs.csv").each do |shipment_line|
 #Break down the data into indivdual line-arrays, cut off the \n with 'chomp', while at the same time splitting the line up at the ','
   line_array = shipment_line.chomp.split(',')
@@ -52,11 +54,9 @@ open("planet_express_logs.csv").each do |shipment_line|
     leela_shipments += 1
   end
 
-end
 
 
-
-
+end ##END OF OPEN BLOCK
 
 
 # How many trips did each employee pilot?
@@ -71,8 +71,38 @@ puts "\nBONUSES"
 puts "With Amy only making #{amy_shipments} trip to Mars, she only received a bonus of $#{amy_bonus.to_i}. Fry and Bender did a little better; Fry: $#{fry_bonus.to_i} & Bender: $#{bender_bonus.to_i}. Leela did the best with #{leela_shipments} shipments, making a total bonus of $#{leela_bonus.to_i}."
 
 # How much money did we make broken down by planet?
-# puts "\nMONEY BY PLANET"
-# # puts "#{shipments}"
+puts "\nMONEY BY PLANET - The Long way"
+puts "Earth:    $#{shipments[0].money + shipments[2].money}"
+puts "Moon:     $#{shipments[1].money}"
+puts "Mars:     $#{shipments[3].money}"
+puts "Uranus:   $#{shipments[4].money + shipments[7].money}"
+puts "Jupitor:  $#{shipments[5].money}"
+puts "Pluto:    $#{shipments[6].money}"
+puts "Saturn:   $#{shipments[8].money}"
+puts "Mercury:  $#{shipments[9].money}"
+
+
+# How much money did we make broken down by planet?
+puts "\nMONEY BY PLANET - The Lazy way"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
